@@ -1,7 +1,7 @@
 pipeline {
     agent any
     parameters {
-        string(defaultValue: "", description: "something", name: "stringName")
+        string(defaultValue: "ceva", description: "something", name: "stringName")
         booleanParam(defaultValue: false, description: "something", name: "booleanName")
         choice(choices: ["BOB", "BOBSON"], description: "something", name: "choiceName")
     }
