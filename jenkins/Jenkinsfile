@@ -1,5 +1,10 @@
 pipeline {
     agent any
+    environment {
+        def myString = "hi"
+        def myBool = true
+        def myNumber = 10
+    }
     parameters {
         string(defaultValue: "ceva", description: "something", name: "stringName")
         booleanParam(defaultValue: false, description: "something", name: "booleanName")
@@ -15,6 +20,10 @@ pipeline {
                 echo "Boolean set to ${booleanName}\n"
                 echo "String set to ${stringName}\n"
                 echo "Boolean set to ${choiceName}\n"
+
+                echo "variable Boolean set to ${myBool}\n"
+                echo "variable String set to ${myString}\n"
+                echo "variable Number set to ${myNumber}\n"
             }
         }
         stage('Test') {
