@@ -1,5 +1,10 @@
 pipeline {
     agent any
+    parameters {
+        string(defaultValue: "", description: "something", name: "stringName")
+        booleanParam(defaultValue: false, description: "something", name: "booleanName")
+        choice(choices: ["BOB", "BOBSON"], description: "something", name: "choiceName")
+    }
     options {
         skipStagesAfterUnstable()
     }
@@ -7,6 +12,9 @@ pipeline {
         stage('Build') {
             steps {
                 sh 'mvn -B -DskipTests clean package'
+                echo "Boolean set to ${booleanName}\n"
+                echo "String set to ${stringName}\n"
+                echo "Boolean set to ${choiceName}\n"
             }
         }
         stage('Test') {
@@ -19,9 +27,9 @@ pipeline {
                 }
             }
         }
-        stage('Deliver') { 
+        stage('Deliver') {
             steps {
-                sh './jenkins/scripts/deliver.sh' 
+                sh './jenkins/scripts/deliver.sh'
             }
         }
     }
