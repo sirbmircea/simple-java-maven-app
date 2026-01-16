@@ -50,6 +50,6 @@ pipeline {
     }
 }
 
-def myfunc(string myText) {
+def myfunc(String myText) {
     echo "text from function: ${myText}"
 }
