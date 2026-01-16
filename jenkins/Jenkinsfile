@@ -34,6 +34,14 @@ pipeline {
                 myfunc("blablabla")
             }
         }
+        stage('Conditional Stage') {
+            when {
+                expression { return params.booleanName }
+            }
+            steps {
+                echo "This runs only if booleanName is true"
+            }
+        }
         stage('Test') {
             steps {
                 sh 'mvn test'
