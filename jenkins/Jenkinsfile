@@ -4,6 +4,7 @@ pipeline {
         def myString = "hi"
         def myBool = true
         def myNumber = 10
+        MY_ENVIOROMENT_STRING = "hi"
     }
     parameters {
         string(defaultValue: "ceva", description: "something", name: "stringName")
@@ -24,6 +25,7 @@ pipeline {
                 echo "variable Boolean set to ${myBool}\n"
                 echo "variable String set to ${myString}\n"
                 echo "variable Number set to ${myNumber}\n"
+                echo "MY_ENVIOROMENT_STRING ${env.MY_ENVIOROMENT_STRING}\n"
                 script {
                     if (true) {
                         echo "Build number: ${env.BUILD_NUMBER}"
