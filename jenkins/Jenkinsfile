@@ -29,6 +29,7 @@ pipeline {
                         echo "Build number: ${env.BUILD_NUMBER}"
                     }
                 }
+                myfunc("blablabla")
             }
         }
         stage('Test') {
@@ -47,4 +48,8 @@ pipeline {
             }
         }
     }
+}
+
+def myfunc(string myText) {
+    echo "text from function: ${myText}"
 }
