@@ -24,8 +24,11 @@ pipeline {
                 echo "variable Boolean set to ${myBool}\n"
                 echo "variable String set to ${myString}\n"
                 echo "variable Number set to ${myNumber}\n"
-
-                echo "Build number: ${env.BUILD_NUMBER}"
+                script {
+                    if (true) {
+                        echo "Build number: ${env.BUILD_NUMBER}"
+                    }
+                }
             }
         }
         stage('Test') {
