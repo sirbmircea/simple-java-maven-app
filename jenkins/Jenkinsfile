@@ -47,6 +47,11 @@ pipeline {
                 sh './jenkins/scripts/deliver.sh'
             }
         }
+        stage('Build remotely other pipeline') {
+            steps {
+                build 'My Pileline'
+            }
+        }
     }
 }
 
