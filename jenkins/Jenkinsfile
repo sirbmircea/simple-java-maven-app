@@ -52,6 +52,13 @@ pipeline {
                 build 'My Pileline'
             }
         }
+        stage('Build remotely other pipeline with params') {
+            steps {
+                build job: 'My Pileline', parameters: [
+                        string(name: 'stringName', value: "remote from other pipeline")
+                ]
+            }
+        }
     }
 }
 
