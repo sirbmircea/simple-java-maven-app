@@ -30,6 +30,8 @@ pipeline {
                     if (true) {
                         echo "Build number: ${env.BUILD_NUMBER}"
                     }
+                    echo myNumber.toString()  // works
+                    sh 'echo $myNumber'
                 }
                 myfunc("blablabla")
             }
