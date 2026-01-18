@@ -10,4 +10,4 @@ EXPOSE 8080
 
 USER root
 
-CMD ["java -jar app.jar"]
+ENTRYPOINT ["java", "-jar", "app.jar"]
