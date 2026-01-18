@@ -32,6 +32,8 @@ pipeline {
                     }
                     echo myNumber.toString()  // works
                     sh 'echo $myBool'
+                    echo env.MY_ENVIOROMENT_STRING  // works
+                    sh 'echo $MY_ENVIOROMENT_STRING'
                 }
                 myfunc("blablabla")
             }
